@@ -1,0 +1,45 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity cont_4b_comp_tb is
+end entity;
+
+architecture cont_4b_comp_tb_arq of cont_4b_comp_tb is
+    -- Declaración del componente
+    component cont_4b_comp is
+        port (
+            clk_i : in  std_logic;
+            rst_i : in  std_logic;
+            ena_i : in  std_logic;
+            q_o   : out std_logic_vector(3 downto 0)
+        );
+    end component;
+
+    -- Señales internas
+    signal clk_i : std_logic := '0';
+    signal rst_i : std_logic := '0';
+    signal ena_i : std_logic := '0';
+    signal q_o   : std_logic_vector(3 downto 0);
+
+begin
+    -- Instancia del DUT
+    DUT: cont_4b_comp
+        port map (
+            clk_i => clk_i,
+            rst_i => rst_i,
+            ena_i => ena_i,
+            q_o   => q_o
+        );
+
+    clk_i <= not clk_i after 10 ns; -- 50 Mhz
+
+    -- Estímulos
+    rst_i   <=  '1', '0' after 25 ns; -- Reset activo por 25 ns
+    ena_i   <=  '0',                -- en 0 ns
+                '1' after 25 ns,    -- en 25 ns
+                '0' after 100 ns,   -- en 100 ns
+                '1' after 200 ns;   -- en 200 ns
+
+
+end architecture;
