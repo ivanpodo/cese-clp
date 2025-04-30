@@ -1,0 +1,5 @@
+# Se sube sólo los archivos fuente - Elimino simulación y síntesis
+ejercicios/ejercicio_*/sintesis/*
+ejercicios/ejercicio_*/simulacion/*
+!ejercicios/ejercicio_*/sintesis/.gitkeep
+!ejercicios/ejercicio_*/simulacion/.gitkeep
