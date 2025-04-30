@@ -32,3 +32,12 @@ La carga del bitstream en la FPGA se realizó mediante **escritorio remoto** al 
 
 ---
 
+## Links útiles presentacion-tp-final
+
+- [`Presentacion PDF`](./docs/presentacion-tp-final.pdf) → Presentación en formato PDF.
+- [`Presentacion`](./docs/presentacion-tp-final.odp) → Presentación en formato ODP.
+
+
+
+
+
