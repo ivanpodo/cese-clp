@@ -57,7 +57,7 @@ begin
             pwm_out    => pwm_out_tb
         );
 
-    -- Proceso de estímulos
+    -- Proceso de estímulos (ensayar en 100ms)
     stim_tb: process
         -- Procedimiento auxiliar para cargar configuración
         procedure load_config_tb (
@@ -99,15 +99,13 @@ begin
         load_config_tb(per_val => 4095, duty_val => 2048);
         wait for THREE_PERIODS;
 
-        -- 25 %
-        load_config_tb(per_val => 4095, duty_val => 1024);
+        -- 50 %
+        load_config_tb(per_val => 2048, duty_val => 1024);
         wait for THREE_PERIODS;
         
-        -- 0 %
-        load_config_tb(per_val => 4095, duty_val => 0);
-        wait for FIVE_PERIODS;
-        -- Fin de simulación
-        assert false report "Fin de simulación" severity failure;
+        -- 25 %
+        load_config_tb(per_val => 2048, duty_val => 512);
+        wait for THREE_PERIODS;
     end process stim_tb;
 
 end architecture;
