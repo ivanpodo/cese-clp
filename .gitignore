@@ -1,5 +1,11 @@
 # Se sube sólo los archivos fuente - Elimino simulación y síntesis
 ejercicios/ejercicio_*/sintesis/*
 ejercicios/ejercicio_*/simulacion/*
+tp-final/ejercicio_*/sintesis/*
+tp-final/ejercicio_*/simulacion/*
+
+# Conservo las carpetas
 !ejercicios/ejercicio_*/sintesis/.gitkeep
 !ejercicios/ejercicio_*/simulacion/.gitkeep
+!tp-final/ejercicio_*/sintesis/.gitkeep
+!tp-final/ejercicio_*/simulacion/.gitkeep
